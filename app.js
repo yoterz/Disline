@@ -1,3 +1,4 @@
+/*Discord to line  โดยส่งผ่านทาง line notify*/
 const Discord = require('discord.js')
 var request = require('request')
 var BOTLINEnotify_TOKEN = process.env.BOTLINEnotify_TOKEN       //token line notify bottochannel
