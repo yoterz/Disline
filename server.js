@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }))              //2บรรท
 app.use(bodyParser.json())
 
 app.get('/', function(request, response) {
-  response.send('https://supermariozweb.herokuapp.com/')
+  response.send('supermariozweb.herokuapp.com/webhook')
 })
 
 app.post('/webhook', (req, res) => {
