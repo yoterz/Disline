@@ -6,13 +6,14 @@ const nameline = require("./idname")
 const app = express()
 const port = process.env.PORT || 4000
 const bot = new Discord.Client()
-var bottoken = process.env.BOTLINE_TOKEN
+var bottoken = process.env.BOTLINE_TOKEN                //token bot ในห้อง line
 var linechannel = 'general'
 bot.login(bottoken)
 bot.on("ready",() => {
     console.log('Ready...')
 })
 
+/*start line to discord*/
 app.use(bodyParser.urlencoded({ extended: false }))              //2บรรทัดนี้ ทำให้เช็คข้อความในlineได้
 app.use(bodyParser.json())
 
@@ -66,7 +67,6 @@ app.post('/webhook', (req, res) => {
              }      
   
 })
-app.listen(port)
 
 function sendmsgtodiscord(msgz) {
      var channel = bot.channels.find("name", linechannel)
@@ -81,6 +81,7 @@ const embed = new Discord.RichEmbed()
        var channel = bot.channels.find("name", linechannel)
        channel.send({embed})
 }
-
+app.listen(port)
+/*END line to discord*/
 
 
