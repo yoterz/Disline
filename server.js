@@ -1,4 +1,4 @@
-/*Line to Discord*/
+/*Line to Discord ต้องมีบอทใน GourpLine เพื่อสร้าง webhook เช็คข้อความใน gourpline*/
 
 const express = require('express')
 const bodyParser = require('body-parser')
