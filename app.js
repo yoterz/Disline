@@ -1,10 +1,10 @@
 const Discord = require('discord.js')
 var request = require('request')
 var BOTLINEnotify_TOKEN = process.env.BOTLINEnotify_TOKEN       //token line notify bottochannel
-var BOTLINEtodiscord = process.env.BOTLINEtodiscord_TOKEN         //token discord
+var BOTDiscord = process.env.BOTDiscord_TOKEN         //token Bot discord
 const bot = new Discord.Client()
 linechannel = 'general'
-bot.login(BOTLINEtodiscord)
+bot.login(BOTDiscord)
 
 bot.on("ready",() => {
     console.log('Ready...')
