@@ -6,9 +6,9 @@ const nameline = require("./idname")
 const app = express()
 const port = process.env.PORT || 4000
 const bot = new Discord.Client()
-var bottoken = process.env.BOTLINE_TOKEN                //token bot ในห้อง line
+var BotDiscordToLineToken = process.env.BOTLINEtodiscord_TOKEN                //token bot discord  line to discord
 var linechannel = 'general'
-bot.login(bottoken)
+bot.login(BotDiscordToLineToken)
 bot.on("ready",() => {
     console.log('Ready...')
 })
