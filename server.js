@@ -21,6 +21,11 @@ app.use(bodyParser.json())
 
 app.get('/', function(request, response) {
   response.send('supermariozweb.herokuapp.com/webhook')
+    for(i=0; i < listexcord.length; i++){
+                cosole.log(i,listexcord[i])
+                let listcode = listexcord[i]
+                response.send(listcode)
+     }
 })
 
 app.post('/webhook', (req, res) => {
