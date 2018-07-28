@@ -1,5 +1,12 @@
-exports.namecode = ["SendMsgAllChDiscord",
+exports.namecode = 
+    {
+           name = ["SendMsgAllChDiscord",
                     "GetDatainArray"]
-exports.excode =["view-source:https://raw.githubusercontent.com/yoterz/ExampleCodeNodeJs/master/SendMsgToAllChDis.js",
+    }
+
+exports.excode =
+    {
+            code = ["view-source:https://raw.githubusercontent.com/yoterz/ExampleCodeNodeJs/master/SendMsgToAllChDis.js",
                  "view-source:https://raw.githubusercontent.com/yoterz/ExampleCodeNodeJs/master/GetDatainArray.js"]
-   
+    }
+  
