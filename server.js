@@ -27,7 +27,7 @@ app.get('/', function(request, response) {
     for(i=0; i < namecode.length; i++){
                 cosole.log(i,namecode[i],excode[i])
                 let listcode = namecode[i]+" : "+excode[i]
-                response.send(<p>listcode/<p>)
+                response.send(<p>listcode</p>)
      }
 })
 
