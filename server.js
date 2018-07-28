@@ -5,7 +5,6 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const Discord = require('discord.js')
 const nameline = require("./idname")
-const listcode = require("./listexcode")
 const app = express()
 const port = process.env.PORT || 4000
 const bot = new Discord.Client()
@@ -22,9 +21,7 @@ app.use(bodyParser.json())
 
 app.get('/', function(request, response) {
     response.send('supermariozweb.herokuapp.com/webhook')
-  
-     
-    
+
 })
 
 app.post('/webhook', (req, res) => {
