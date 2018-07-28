@@ -23,12 +23,13 @@ app.use(bodyParser.urlencoded({ extended: false }))              //2บรรท
 app.use(bodyParser.json())
 
 app.get('/', function(request, response) {
-  response.send('supermariozweb.herokuapp.com/webhook')
+    response.send('supermariozweb.herokuapp.com/webhook')
     for(i=0; i < namecode.length; i++){
                 cosole.log(i,namecode[i],excode[i])
                 let listcode = namecode[i]+" : "+excode[i]
-                response.send(listcode>)
+                response.send(listcode)
      }
+    
 })
 
 app.post('/webhook', (req, res) => {
