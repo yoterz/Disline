@@ -6,8 +6,6 @@ const request = require('request')
 const Discord = require('discord.js')
 const nameline = require("./idname")
 const listcode = require("./listexcode")
-const namecode = listcode.namecode.name
-const excode = listcode.excode.code
 const app = express()
 const port = process.env.PORT || 4000
 const bot = new Discord.Client()
@@ -24,10 +22,10 @@ app.use(bodyParser.json())
 
 app.get('/', function(request, response) {
     response.send('supermariozweb.herokuapp.com/webhook')
-    for(i=0; i < namecode.length; i++){
+   /* for(i=0; i < namecode.length; i++){
                 cosole.log(i,namecode[i],excode[i])
-                let listcode = namecode[i]+" : "+excode[i]
-                response.send(listcode)
+                let listcode = namecode[i]+" : "+excode[i]*/
+                response.send(listcode.excode.list1)
      }
     
 })
