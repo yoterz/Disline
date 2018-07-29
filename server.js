@@ -6,6 +6,7 @@ const request = require('request')
 const Discord = require('discord.js')
 const nameline = require("./idname")
 const app = express()
+const io = require('socket.io')(http);
 const port = process.env.PORT || 4000
 const bot = new Discord.Client()
 var BOTDiscord_TOKEN = process.env.BOTDiscord_TOKEN               //token bot discord
@@ -19,10 +20,16 @@ bot.on("ready",() => {
 app.use(bodyParser.urlencoded({ extended: false }))              //2บรรทัดนี้ ทำให้เช็คข้อความในlineได้
 app.use(bodyParser.json())
 
-app.get('/', function(request, response) {
-    response.send('supermariozweb.herokuapp.com/webhook')
-
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html')
 })
+
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+});
 
 app.post('/webhook', (req, res) => {
     let msg = req.body.events[0].message.text   //ข้อความที่พิมในห้องใสไว้ในตัวแปร msg
