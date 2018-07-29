@@ -93,7 +93,11 @@ const embed = new Discord.RichEmbed()
        var channel = bot.channels.find("name", linechannel)
        channel.send({embed})
 }
-app.listen(port)
+
+http.listen(port, function(){
+  console.log('listening on *:' + port);
+});
+//app.listen(port)
 /*END line to discord*/
 
 
