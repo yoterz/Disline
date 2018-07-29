@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }))              //2บรรท
 app.use(bodyParser.json())
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html')
+  res.sendFile(__dirname + '/chatindex.html')
 })
 
 
