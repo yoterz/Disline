@@ -25,12 +25,13 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/chatindex.html')
 })
 
-
+/*
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+    io.emit('chat message', msg)
   });
-});
+})
+*/
 
 app.post('/webhook', (req, res) => {
     let msg = req.body.events[0].message.text   //ข้อความที่พิมในห้องใสไว้ในตัวแปร msg
