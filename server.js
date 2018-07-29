@@ -21,16 +21,33 @@ bot.on("ready",() => {
 app.use(bodyParser.urlencoded({ extended: false }))              //2บรรทัดนี้ ทำให้เช็คข้อความในlineได้
 app.use(bodyParser.json())
 
+//start chat
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/chatindex.html')
 })
 
+var clients = 0;
+var namechannel = 'chat143message'
 
 io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg)
+clients++;
+var data = {status : ' user connected',CountUser : clients + ' user online'}
+io.sockets.emit(namechannel,data)
+
+
+  socket.on(namechannel, function(msguser){
+    io.emit(namechannel, {msg : msguser});
   });
-})
+
+  socket.on('disconnect',function(){
+    clients--;
+    var data = {status : 'user disconnected',CountUser : clients + ' user online'}
+    io.sockets.emit(namechannel,data)
+    
+  })
+
+});
+//end chat
 
 
 app.post('/webhook', (req, res) => {
