@@ -11,6 +11,10 @@ bot.on("ready",() => {
     console.log('Ready...')
 })
 
+setInterval(()=>status(), 30000);
+function status(){     
+    console.log('Line BOt running.....')
+}
 bot.on("message", (msg) => {
     
     /*--ส่องข้อความที่มี "+" นำหน้า --*/
