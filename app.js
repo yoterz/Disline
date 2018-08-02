@@ -11,7 +11,7 @@ bot.on("ready",() => {
     console.log('Ready...')
 })
 
-setInterval(()=>status(), 30000);
+setInterval(()=>status(), 60000);
 function status(){     
     console.log('Line BOt running.....')
 }
