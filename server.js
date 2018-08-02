@@ -22,7 +22,7 @@ app.use(bodyParser.json())
 
 //start chat
 app.get('/', function(req, res){
-  <h1>DisLine<\h1>
+  res.end('<h1>DisLine<\h1>');
 })
 
 
