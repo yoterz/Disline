@@ -5,7 +5,7 @@ var BOTLINEnotify_TOKEN = process.env.BOTLINEnotify_TOKEN       //token line not
 var BOTDiscord = process.env.BOTDiscordtoline_TOKEN         //token Bot discord to line ตัวสีฟ้า
 const bot = new Discord.Client()
 linechannel = 'general'
-bot.login(BOTDiscord)
+
 
 bot.on("ready",() => {
     console.log('Ready...')
@@ -64,3 +64,4 @@ function sendText(args,imgurl) {
     })
 }
 
+bot.login(BOTDiscord)
