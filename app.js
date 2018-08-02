@@ -2,7 +2,7 @@
 const Discord = require('discord.js')
 var request = require('request')
 var BOTLINEnotify_TOKEN = process.env.BOTLINEnotify_TOKEN       //token line notify bottochannel
-var BOTDiscord = process.env.BOTDiscord_TOKEN         //token Bot discord
+var BOTDiscord = process.env.BOTDiscordtoline_TOKEN         //token Bot discord
 const bot = new Discord.Client()
 linechannel = 'general'
 bot.login(BOTDiscord)
