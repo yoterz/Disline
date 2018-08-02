@@ -17,37 +17,13 @@ bot.on("ready",() => {
     console.log('Ready...')
 })
 
-/*start line to discord*/
 app.use(bodyParser.urlencoded({ extended: false }))              //2บรรทัดนี้ ทำให้เช็คข้อความในlineได้
 app.use(bodyParser.json())
 
 //start chat
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/chatindex.html')
+  <h1>DisLine<\h1>
 })
-
-var clients = 0;
-var namechannel = 'chat143message'
-
-io.on('connection', function(socket){
-clients++;
-var data = {status : ' user connected',CountUser : clients + ' user online'}
-io.sockets.emit(namechannel,data)
-
-
-  socket.on(namechannel, function(msguser){
-    io.emit(namechannel, {msg : msguser});
-  });
-
-  socket.on('disconnect',function(){
-    clients--;
-    var data = {status : 'user disconnected',CountUser : clients + ' user online'}
-    io.sockets.emit(namechannel,data)
-    
-  })
-
-});
-//end chat
 
 
 app.post('/webhook', (req, res) => {
