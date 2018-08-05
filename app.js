@@ -12,8 +12,23 @@ bot.on("ready",() => {
 })
 
 setInterval(()=>status(), 60000);
+
 function status(){     
-    console.log('Line BOt running.....')
+   
+    currentUtcTime = new Date(); // This is in UTC
+    thTimeZone = new Date(currentUtcTime.toLocaleString('en-US', { timeZone: 'Asia/Bangkok' }));
+        var days = new Array('อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์','อาทิตย์')
+        var day = thTimeZone.getDay()
+        var days = days[day]
+        var d = thTimeZone.getDate()
+        var month = thTimeZone.getMonth()
+        var year = thTimeZone.getFullYear()
+        var h = thTimeZone.getHours()
+        var m = thTimeZone.getMinutes()
+    console.log('Line BOt running.....'+days+' '+d+'/'+month+'/'+year+' '+h+'.'+m+' น')
+    bot.user.setGame(days+' '+d+'/'+month+'/'+year+' '+h+'.'+m+' น')
+    
+    
 }
 bot.on("message", (msg) => {
     
