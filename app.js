@@ -34,7 +34,7 @@ function status(){
             }
            
     console.log('Line BOt running.....'+days+' '+d+'/'+month+'/'+year+' '+h+'.'+m+' น')
-    bot.user.setGame(days+' '+d+'/'+month+'/'+year+' '+h+'.'+m+' น')
+    bot.user.setGame(days+' '+d+'/'+month+'/'+year+' '+h+'.'+m+'น')
     
     
 }
