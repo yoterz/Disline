@@ -25,6 +25,14 @@ function status(){
         var year = thTimeZone.getFullYear()
         var h = thTimeZone.getHours()
         var m = thTimeZone.getMinutes()
+            /**แต่งเวลาให้สวย */
+            if (h < 10) {
+            h = "0" + h;
+            }
+            if (m < 10) {
+            m = "0" + m;
+            }
+           
     console.log('Line BOt running.....'+days+' '+d+'/'+month+'/'+year+' '+h+'.'+m+' น')
     bot.user.setGame(days+' '+d+'/'+month+'/'+year+' '+h+'.'+m+' น')
     
