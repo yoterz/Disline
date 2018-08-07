@@ -17,12 +17,14 @@ function status(){
    
     currentUtcTime = new Date(); // This is in UTC
     thTimeZone = new Date(currentUtcTime.toLocaleString('en-US', { timeZone: 'Asia/Bangkok' }));
-        var days = new Array('อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์','อาทิตย์')
+        var days = new Array('อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส','อา')
+        var months = new Array('ม.ค','ก.พ','มี.ค','เม.ย','พ.ค','มิ.ย','ก.ค','ส.ค','ก.ย','ต.ค','พ.ย','ธ.ค')
         var day = thTimeZone.getDay()
-        var days = days[day]
+        days = days[day]
         var d = thTimeZone.getDate()
-        var month = thTimeZone.getMonth()+1
-        var year = thTimeZone.getFullYear()
+        var month = thTimeZone.getMonth()
+        months = months[month]
+        var year = thTimeZone.getFullYear()+543
         var h = thTimeZone.getHours()
         var m = thTimeZone.getMinutes()
             /**แต่งเวลาให้สวย */
@@ -33,7 +35,7 @@ function status(){
             m = "0" + m;
             }
            
-    console.log('Line BOt running.....'+days+' '+d+'/'+month+'/'+year+' '+h+'.'+m+' น')
+    console.log('Line BOt running.....'+days+' '+d+'/'+months+'/'+year+' '+h+'.'+m+' น')
     bot.user.setGame(days+' '+d+'/'+month+'/'+year+' '+h+'.'+m+' น')
     
     
