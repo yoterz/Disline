@@ -24,8 +24,7 @@ function status(){
         var d = thTimeZone.getDate()
         var month = thTimeZone.getMonth()
         months = months[month]
-        var year = thTimeZone.getFullYear()+543
-        var h = thTimeZone.getHours()
+        var year = thTimeZone.getFullYear()-1957
         var m = thTimeZone.getMinutes()
             /**แต่งเวลาให้สวย */
             if (h < 10) {
