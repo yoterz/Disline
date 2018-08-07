@@ -20,10 +20,10 @@ function status(){
         var days = new Array('อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤ', 'ศุกร์', 'เสาร์','อาทิตย์')
         var months = new Array('ม.ค','ก.พ','มี.ค','เม.ย','พ.ค','มิ.ย','ก.ค','ส.ค','ก.ย','ต.ค','พ.ย','ธ.ค')
         var day = thTimeZone.getDay()
-        days = days[day]
+        var days = days[day]
         var d = thTimeZone.getDate()
         var month = thTimeZone.getMonth()
-        months = months[month]
+        var months = months[month]
         var year = thTimeZone.getFullYear()-1957
         var h = thTimeZone.getHours()
         var m = thTimeZone.getMinutes()
