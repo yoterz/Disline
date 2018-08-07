@@ -21,7 +21,7 @@ function status(){
         var day = thTimeZone.getDay()
         var days = days[day]
         var d = thTimeZone.getDate()
-        var month = thTimeZone.getMonth()
+        var month = thTimeZone.getMonth()+1
         var year = thTimeZone.getFullYear()
         var h = thTimeZone.getHours()
         var m = thTimeZone.getMinutes()
