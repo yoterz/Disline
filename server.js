@@ -47,7 +47,7 @@ app.post('/webhook', (req, res) => {
                           break  
                           
               case 'link' :
-                          var msgz = msg
+                          var msgz = name+' : '+msg
                           console.log('link ----> '+msgz)
                           sendmsgtodiscord(msgz)                       
                           res.sendStatus(200)
