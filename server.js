@@ -35,10 +35,7 @@ app.post('/webhook', (req, res) => {
     var msgtype = req.body.events[0].message.type                          //type ชนิดข้อความ
     console.log('userId : '+req.body.events[0].source.userId+'     type message : '+req.body.events[0].message.type)     //แสดง userid และ ชนิดของข้อความ 
       
-     if (msg.startsWith("https://www.")){
-          console.log('link ---> '+msg)    //ชื่อคน ที่พิมข้อความใน channel
-     }
-             
+ 
           switch (msgtype) {
               case 'text' :
                           var msgz = '```'+name+' : '+msg+'```'
