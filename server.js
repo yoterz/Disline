@@ -77,7 +77,7 @@ function sendmsgtodiscord(msgz,msg) {
          var channel = bot.channels.find("name", linechannel)
          channel.send(msgz)
     
-    if (msg.content.startsWith("https://www.")){
+    if (msg.startsWith("https://www.")){
          console.log('link ---> '+msg)    //ชื่อคน ที่พิมข้อความใน channel
          channel.send(msg)    
     }
