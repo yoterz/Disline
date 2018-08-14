@@ -39,7 +39,7 @@ app.post('/webhook', (req, res) => {
               case 'text' :
                           var msgz = '```'+name+' : '+msg+'```'
                           console.log(msgz)
-                          sendmsgtodiscord(msgz)                       
+                          sendmsgtodiscord(msgz,msg)                       
                           res.sendStatus(200)
                           break  
                           
@@ -73,7 +73,7 @@ app.post('/webhook', (req, res) => {
   
 })
 
-function sendmsgtodiscord(msgz) {
+function sendmsgtodiscord(msgz,msg) {
          var channel = bot.channels.find("name", linechannel)
          channel.send(msgz)
     
