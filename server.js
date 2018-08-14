@@ -35,7 +35,7 @@ app.post('/webhook', (req, res) => {
     var msgtype = req.body.events[0].message.type                          //type ชนิดข้อความ
     console.log('userId : '+req.body.events[0].source.userId+'     type message : '+req.body.events[0].message.type)     //แสดง userid และ ชนิดของข้อความ 
         if (msg.startsWith("https")){
-            console.log('link ---> '+msg)
+           msgtype = "link"
         }
             
           switch (msgtype) {
@@ -46,6 +46,13 @@ app.post('/webhook', (req, res) => {
                           res.sendStatus(200)
                           break  
                           
+              case 'link' :
+                          var msgz = msg
+                          console.log('link ----> '+msgz)
+                          sendmsgtodiscord(msgz)                       
+                          res.sendStatus(200)
+                          break  
+                  
               case 'image' :
                           var msgzz = req.body.events[0].message.id
                           var msgz = name+' : :frame_photo: '
