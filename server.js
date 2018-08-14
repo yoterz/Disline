@@ -34,8 +34,9 @@ app.post('/webhook', (req, res) => {
     var name = nameline[idname]                                            //เอา idname ไปดึงรายชื่อใน idname.json
     var msgtype = req.body.events[0].message.type                          //type ชนิดข้อความ
     console.log('userId : '+req.body.events[0].source.userId+'     type message : '+req.body.events[0].message.type)     //แสดง userid และ ชนิดของข้อความ 
-      
-  
+        if (msg.startsWith("https")){
+            console.log('link ---> '+msg)
+        }
             
           switch (msgtype) {
               case 'text' :
