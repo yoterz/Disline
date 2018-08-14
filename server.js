@@ -37,7 +37,7 @@ app.post('/webhook', (req, res) => {
       
      if (msg.startsWith("https://www.")){
           console.log('link ---> '+msg)    //ชื่อคน ที่พิมข้อความใน channel
-         {
+     }
              
           switch (msgtype) {
               case 'text' :
