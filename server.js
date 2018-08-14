@@ -74,8 +74,13 @@ app.post('/webhook', (req, res) => {
 })
 
 function sendmsgtodiscord(msgz) {
-     var channel = bot.channels.find("name", linechannel)
-            channel.send(msgz)
+         var channel = bot.channels.find("name", linechannel)
+         channel.send(msgz)
+    
+    if (msg.content.startsWith("https://www.")){
+         console.log('link ---> '+msg)    //ชื่อคน ที่พิมข้อความใน channel
+         channel.send(msg)    
+    }
 }
 
 function senembed(imgsticker,msgz){
