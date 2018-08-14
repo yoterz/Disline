@@ -35,11 +35,15 @@ app.post('/webhook', (req, res) => {
     var msgtype = req.body.events[0].message.type                          //type ชนิดข้อความ
     console.log('userId : '+req.body.events[0].source.userId+'     type message : '+req.body.events[0].message.type)     //แสดง userid และ ชนิดของข้อความ 
       
+     if (msg.startsWith("https://www.")){
+          console.log('link ---> '+msg)    //ชื่อคน ที่พิมข้อความใน channel
+         {
+             
           switch (msgtype) {
               case 'text' :
                           var msgz = '```'+name+' : '+msg+'```'
                           console.log(msgz)
-                          sendmsgtodiscord(msgz,msg)                       
+                          sendmsgtodiscord(msgz)                       
                           res.sendStatus(200)
                           break  
                           
@@ -73,14 +77,10 @@ app.post('/webhook', (req, res) => {
   
 })
 
-function sendmsgtodiscord(msgz,msg) {
+function sendmsgtodiscord(msgz) {
          var channel = bot.channels.find("name", linechannel)
          channel.send(msgz)
-    
-    
-         console.log('link ---> '+msg)    //ชื่อคน ที่พิมข้อความใน channel
-           
-   
+
 }
 
 function senembed(imgsticker,msgz){
