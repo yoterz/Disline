@@ -11,7 +11,7 @@ const io = require('socket.io')(http);
 const port = process.env.PORT || 4000
 const bot = new Discord.Client()
 var BOTDiscord_TOKEN = process.env.BOTDiscord_TOKEN               //token botdiscord 'Line' ตัวสีเขียว
-var linechannel = 'general'
+var linechannel = 'ห้องแชทนะห้องแชท'
 bot.login(BOTDiscord_TOKEN)
 bot.on("ready",() => {
     console.log('Ready...')
