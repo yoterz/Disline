@@ -1,3 +1,4 @@
+
 /*Line to Discord ต้องมีบอทใน GourpLine เพื่อสร้าง webhook เช็คข้อความใน gourpline*/
 
 const express = require('express')
@@ -11,8 +12,11 @@ const io = require('socket.io')(http);
 const port = process.env.PORT || 4000
 const bot = new Discord.Client()
 var BOTDiscord_TOKEN = process.env.BOTDiscord_TOKEN               //token botdiscord 'Line' ตัวสีเขียว
-var linechannel = 'ห้องแชทนะห้องแชท'
-bot.login(BOTDiscord_TOKEN)
+//var linechannel = 'ห้องแชทนะห้องแชท'
+var channelID = '421256865343733761'
+//bot.login(BOTDiscord_TOKEN)
+
+
 bot.on("ready",() => {
     console.log('Ready...')
 })
@@ -22,11 +26,14 @@ app.use(bodyParser.json())
 
 //start chat
 app.get('/', function(req, res){
-  res.end('<h1>DisLine<\h1>');
+  res.sendfile("index.html");               
+  
 })
 
 
 app.post('/webhook', (req, res) => {
+
+   //res.sendStatus(200)
     let msg = req.body.events[0].message.text   //ข้อความที่พิมในห้องใสไว้ในตัวแปร msg
     
     console.log('-----------------------------------------------------------------------------------')  
@@ -36,16 +43,16 @@ app.post('/webhook', (req, res) => {
     console.log('userId : '+req.body.events[0].source.userId+'     type message : '+req.body.events[0].message.type)     //แสดง userid และ ชนิดของข้อความ 
         
          if (msg){
-            if (msg.startsWith("https")){
-                msgtype = "link"
-            }
+            if (msg.startsWith("https")){ msgtype = "link" }
+           if (msg.startsWith("http")){ msgtype = "link"  }
          }
     
           switch (msgtype) {
               case 'text' :
                           var msgz = '```'+name+' : '+msg+'```'
                           console.log(msgz)
-                          sendmsgtodiscord(msgz)                       
+                          sendmsgtodiscord(msgz)           
+                        
                           res.sendStatus(200)
                           break  
                           
@@ -58,7 +65,7 @@ app.post('/webhook', (req, res) => {
                   
               case 'image' :
                           var msgzz = req.body.events[0].message.id
-                          var msgz = name+' : :frame_photo: '
+                          var msgz = name+' : :frame_photo: ไม่สามารถโชว์รูปจาก Line ได้'
                           console.log('imageid : '+msgzz)
                           sendmsgtodiscord(msgz)                       
                           res.sendStatus(200)
@@ -84,21 +91,29 @@ app.post('/webhook', (req, res) => {
                           break                             
              }      
   
+
 })
 
 function sendmsgtodiscord(msgz) {
-         var channel = bot.channels.find("name", linechannel)
-         channel.send(msgz)
+  //console.log(msgz)
+  bot.channels.get(channelID).send(msgz)
+   // var channel = bot.channels.find("name", linechannel)
+   //channel.send(msgz)
 
 }
+
+
+
 
 function senembed(imgsticker,msgz){
 const embed = new Discord.RichEmbed()
         .setColor(0x00ff00)   //ใส่สี
         .setDescription(msgz) 
         .setImage(imgsticker)     //รูปใหญ่
-       var channel = bot.channels.find("name", linechannel)
-       channel.send({embed})
+      // var channel = bot.channels.find("name", linechannel)
+      //channel.send({embed})
+      bot.channels.get(channelID).send({embed})
+
 }
 
 http.listen(port, function(){
@@ -106,5 +121,6 @@ http.listen(port, function(){
 });
 //app.listen(port)
 /*END line to discord*/
-
+bot.login(BOTDiscord_TOKEN)
+//bot.login("NDcwNTYzNzAxMjQ2NjU2NTEy.Dw4jig.FNhy9lO9mVxlMqGSrViDzhuZ3gk")
 
