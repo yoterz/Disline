@@ -47,7 +47,7 @@ bot.on("message", (msg) => {
     /*--ส่องข้อความที่มี "+" นำหน้า --*/
     if (msg.content.startsWith("+")){
     //console.log(msg.author.username)    //ชื่อคน ที่พิมข้อความใน channel
-      if (msg.channel.id === 'channelID'){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม    
+      if (msg.channel.id === channelID){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม    
    // if (msg.channel.name === linechannel){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม
      var args = msg.author.username +' : '+ msg.content.split('+').slice(1)
      sendText(args)    
@@ -57,7 +57,7 @@ bot.on("message", (msg) => {
     /*--ทำงานเลย รอตรวจสอบว่ามีรูปลงใน channelหรือไม--*/
     if (msg.content.startsWith("")){
     //console.log(msg.author.username)    //ชื่อคน ที่พิมข้อความใน channel
-      if (msg.channel.id === 'channelID'){  
+      if (msg.channel.id === channelID){  
     //if (msg.channel.name === linechannel){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม
       msg.attachments.forEach(function(attachment) {   //ตรวจสอบ ว่ามีการลงรูป หรือ attchment หรือไม่
             var imgurl = attachment.url                 //ดึง url ของรูปใน discord
