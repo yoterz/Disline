@@ -122,5 +122,5 @@ http.listen(port, function(){
 //app.listen(port)
 /*END line to discord*/
 bot.login(BOTDiscord_TOKEN)
-//bot.login("NDcwNTYzNzAxMjQ2NjU2NTEy.Dw4jig.FNhy9lO9mVxlMqGSrViDzhuZ3gk")
+
 
