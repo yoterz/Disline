@@ -4,7 +4,8 @@ var request = require('request')
 var BOTLINEnotify_TOKEN = process.env.BOTLINEnotify_TOKEN       //token line notify bottochannel
 var BOTDiscord = process.env.BOTDiscordtoline_TOKEN         //token Bot discord to line ตัวสีฟ้า
 const bot = new Discord.Client()
-linechannel = 'ห้องแชทนะห้องแชท'
+//linechannel = 'ห้องแชทนะห้องแชท'
+var linechannel = '421256865343733761'
 
 
 bot.on("ready",() => {
@@ -45,7 +46,7 @@ bot.on("message", (msg) => {
     /*--ส่องข้อความที่มี "+" นำหน้า --*/
     if (msg.content.startsWith("+")){
     //console.log(msg.author.username)    //ชื่อคน ที่พิมข้อความใน channel
-    if (msg.channel.name === linechannel){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม
+    if (msg.channel.id === linechannel){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม
      var args = msg.author.username +' : '+ msg.content.split('+').slice(1)
      sendText(args)    
     }
@@ -54,7 +55,7 @@ bot.on("message", (msg) => {
     /*--ทำงานเลย รอตรวจสอบว่ามีรูปลงใน channelหรือไม--*/
     if (msg.content.startsWith("")){
     //console.log(msg.author.username)    //ชื่อคน ที่พิมข้อความใน channel
-    if (msg.channel.name === linechannel){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม
+    if (msg.channel.id === linechannel){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม
       msg.attachments.forEach(function(attachment) {   //ตรวจสอบ ว่ามีการลงรูป หรือ attchment หรือไม่
             var imgurl = attachment.url                 //ดึง url ของรูปใน discord
                   args = msg.author.username+' : Send Image'    //ข้อความ
