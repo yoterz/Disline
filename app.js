@@ -5,7 +5,7 @@ var BOTLINEnotify_TOKEN = process.env.BOTLINEnotify_TOKEN       //token line not
 var BOTDiscord = process.env.BOTDiscordtoline_TOKEN         //token Bot discord to line ตัวสีฟ้า
 const bot = new Discord.Client()
 linechannel = 'ห้องแชทนะห้องแชท'
-var channelID = '530384947249152043'
+var channelID = '458920245370028045'
 
 
 
