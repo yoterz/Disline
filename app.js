@@ -53,7 +53,7 @@ bot.on("message", (msg) => {
      sendText(args)    
     }
   }
-    
+    /*--ส่งสติกเกอร์จาก DIscord ไปที่line--*/
      if (msg.content.startsWith("*")){
     //console.log(msg.author.username)    //ชื่อคน ที่พิมข้อความใน channel
       if (msg.channel.id === channelID){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม    
@@ -67,6 +67,9 @@ bot.on("message", (msg) => {
         .setImage(stickerid)     //รูปใหญ่
         .setTimestamp()  //เวลาด้านล่างสุดผ
          msg.channel.send({embed}) 
+                    
+         args = msg.author.username+' : Send Image'    //ข้อความ
+         sendText(args,stickerid)
     }
   }
     
