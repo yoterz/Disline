@@ -54,6 +54,20 @@ bot.on("message", (msg) => {
     }
   }
     
+     if (msg.content.startsWith("*")){
+    //console.log(msg.author.username)    //ชื่อคน ที่พิมข้อความใน channel
+      if (msg.channel.id === channelID){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม    
+   // if (msg.channel.name === linechannel){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม
+     var imgID = msg.content.split('*').slice(1)
+     var imgsticker = "https://stickershop.line-scdn.net/stickershop/v1/sticker/"+imgID+"/ANDROID/sticker.png;compress=true" 
+     const embed = new Discord.RichEmbed()
+        .setColor(0x112263)   //ใส่สี
+        .setImage(imgsticker)     //รูปใหญ่
+        .setTimestamp()  //เวลาด้านล่างสุดผ
+         msg.channel.send({embed}) 
+    }
+  }
+    
     /*--ทำงานเลย รอตรวจสอบว่ามีรูปลงใน channelหรือไม--*/
     if (msg.content.startsWith("")){
     //console.log(msg.author.username)    //ชื่อคน ที่พิมข้อความใน channel
