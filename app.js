@@ -60,7 +60,7 @@ bot.on("message", (msg) => {
    // if (msg.channel.name === linechannel){      //ตรวจสอบ ชื่อห้องที่พิมพ์ข้อความ ตรงกับ ชื่อห้องที่เรากำหนดหรือไม
      var imgID = msg.content.split('*').slice(1)
      var stickerid = "https://stickershop.line-scdn.net/stickershop/v1/sticker/"+imgID+"/ANDROID/sticker.png;compress=true" 
-     var msgz = '```'+msg.author.username+' : Sticker\n  ID : '+stickerid+'```'
+     var msgz = '```'+msg.author.username+' : Sticker\n  ID : '+imgID+'```'
      const embed = new Discord.RichEmbed()
         .setColor(0x112263)   //ใส่สี
         .setDescription(msgz) 
