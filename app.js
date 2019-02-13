@@ -46,11 +46,7 @@ function status(){
         var msgz = 'เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
         bot.channels.get(channelID).send(msgz)
     }
-    if (m == 30){
-        var msgz = 'เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
-        bot.channels.get(channelID).send(msgz)
-    }
-    
+     
 }
 
 
