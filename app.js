@@ -4,7 +4,7 @@ var request = require('request')
 var BOTLINEnotify_TOKEN = process.env.BOTLINEnotify_TOKEN       //token line notify bottochannel
 var BOTDiscord = process.env.BOTDiscordtoline_TOKEN         //token Bot discord to line ตัวสีฟ้า
 const bot = new Discord.Client()
-linechannel = 'ห้องแชทนะห้องแชท'
+linechannel = 'general'
 var channelID = '467004079101706252'
 
 
@@ -44,9 +44,9 @@ sendmsgtodiscord()
 
 function sendmsgtodiscord() {
   //console.log(msgz)
-  bot.channels.get(467004079101706252).send("msgz")
-   // var channel = bot.channels.find("name", linechannel)
-   //channel.send(msgz)
+ // bot.channels.get(467004079101706252).send("msgz")
+   var channel = bot.channels.find("name", linechannel)
+   channel.send("msgz")
 
 }
 
