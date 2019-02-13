@@ -14,7 +14,7 @@ bot.on("ready",() => {
     status()
 })
 
-setInterval(()=>status(), 60000);
+setInterval(()=>status(), 50000);
 
 function status(){     
    
@@ -42,7 +42,7 @@ function status(){
     bot.user.setGame(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     
     
-    if (m == 05){
+    if (m == 00){
         var msgz = 'เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
         bot.channels.get(channelID).send(msgz)
     }
