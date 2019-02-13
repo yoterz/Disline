@@ -89,6 +89,7 @@ bot.on("message", (msg) => {
 })
 function sendTx(){
     msgz = h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year
+    console.log(msgz)
 bot.channels.get(467004079101706252).send(msgz)
 }
 
