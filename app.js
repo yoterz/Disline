@@ -39,10 +39,9 @@ function status(){
            
     console.log('Line BOt running.....'+h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     bot.user.setGame(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
-    
-console.log(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
-bot.channels.get(467004079101706252).send(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
+
 }
+
 bot.on("message", (msg) => {
     
     /*--ส่องข้อความที่มี "+" นำหน้า --*/
