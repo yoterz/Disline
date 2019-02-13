@@ -11,6 +11,7 @@ var channelID = '467004079101706252'
 
 bot.on("ready",() => {
     console.log('Ready...')
+    status()
 })
 
 setInterval(()=>status(), 600000);
