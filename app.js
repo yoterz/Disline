@@ -14,7 +14,7 @@ bot.on("ready",() => {
 })
 
 setInterval(()=>status(), 60000);
-
+setInterval(()=>sendTx(), 60000);
 function status(){     
    
     currentUtcTime = new Date(); // This is in UTC
@@ -87,6 +87,10 @@ bot.on("message", (msg) => {
   }   
             
 })
+function sendTx(){
+    msgz = h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year
+bot.channels.get(467004079101706252).send(msgz)
+}
 
 function sendText(args,imgurl) {
     request({
