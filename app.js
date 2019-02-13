@@ -42,11 +42,11 @@ function status(){
     bot.user.setGame(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     
     
-    if (m === 0){
+    if (m == 05){
         var msgz = 'เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
         bot.channels.get(channelID).send(msgz)
     }
-    if (m === 30){
+    if (m == 30){
         var msgz = 'เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
         bot.channels.get(channelID).send(msgz)
     }
