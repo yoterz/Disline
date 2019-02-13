@@ -43,7 +43,7 @@ function status(){
     
     
     if (m == 00){
-        var msgz = 'เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
+        var msgz = 'Test เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
         bot.channels.get(channelID).send(msgz)
     }
      
