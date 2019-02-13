@@ -14,7 +14,7 @@ bot.on("ready",() => {
 })
 
 setInterval(()=>status(), 60000);
-setInterval(()=>sendTx(), 60000);
+
 function status(){     
    
     currentUtcTime = new Date(); // This is in UTC
@@ -40,7 +40,8 @@ function status(){
     console.log('Line BOt running.....'+h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     bot.user.setGame(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     
-    
+console.log(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
+bot.channels.get(467004079101706252).send(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
 }
 bot.on("message", (msg) => {
     
@@ -87,11 +88,6 @@ bot.on("message", (msg) => {
   }   
             
 })
-function sendTx(){
-    msgz = h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year
-    console.log(msgz)
-bot.channels.get(467004079101706252).send(msgz)
-}
 
 function sendText(args,imgurl) {
     request({
