@@ -44,9 +44,9 @@ sendmsgtodiscord()
 
 function sendmsgtodiscord() {
   //console.log(msgz)
- // bot.channels.get(467004079101706252).send("msgz")
-   var channel = bot.channels.get(467004079101706252)
-   channel.send("msgz")
+ bot.channels.get(channelID).send("msgz")
+   //var channel = bot.channels.get(467004079101706252)
+   //channel.send("msgz")
 
 }
 
