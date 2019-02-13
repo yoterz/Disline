@@ -14,7 +14,7 @@ bot.on("ready",() => {
     status()
 })
 
-setInterval(()=>status(), 1800000);
+setInterval(()=>status(), 60000);
 
 function status(){     
    
@@ -40,17 +40,19 @@ function status(){
            
     console.log('Line BOt running.....'+h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     bot.user.setGame(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
-    var msgz = 'เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
-sendmsgtodiscord(msgz)
+    
+    
+    if (m === 0){
+        var msgz = 'เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
+        bot.channels.get(channelID).send(msgz)
+    }
+    if (m === 30){
+        var msgz = 'เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
+        bot.channels.get(channelID).send(msgz)
+    }
+    
 }
 
-function sendmsgtodiscord(msgz) {
-  //console.log(msgz)
- bot.channels.get(channelID).send(msgz)
-   //var channel = bot.channels.get(467004079101706252)
-   //channel.send("msgz")
-
-}
 
 bot.on("message", (msg) => {
     
