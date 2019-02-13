@@ -14,7 +14,7 @@ bot.on("ready",() => {
     status()
 })
 
-setInterval(()=>status(), 600000);
+setInterval(()=>status(), 1800000);
 
 function status(){     
    
