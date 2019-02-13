@@ -39,6 +39,14 @@ function status(){
            
     console.log('Line BOt running.....'+h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     bot.user.setGame(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
+sendmsgtodiscord()
+}
+
+function sendmsgtodiscord() {
+  //console.log(msgz)
+  bot.channels.get(467004079101706252).send("msgz")
+   // var channel = bot.channels.find("name", linechannel)
+   //channel.send(msgz)
 
 }
 
