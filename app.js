@@ -14,7 +14,7 @@ bot.on("ready",() => {
     status()
 })
 
-setInterval(()=>status(), 50000);
+setInterval(()=>status(), 60000);
 
 function status(){     
    
@@ -41,12 +41,7 @@ function status(){
     console.log('Line BOt running.....'+h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     bot.user.setGame(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     
-    
-    if (m == 00){
-        var msgz = 'Test เวลา  '+h+'.'+m+' น '+days+' '+d+'/'+months+'/'+year
-        bot.channels.get(channelID).send(msgz)
-    }
-     
+
 }
 
 
