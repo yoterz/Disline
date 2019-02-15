@@ -40,7 +40,7 @@ function status(){
            
     console.log('Line BOt running.....'+h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
     bot.user.setGame(h+'.'+m+'น '+days+' '+d+'/'+months+'/'+year)
-    bot.channels.get(channelID).send("แตะอีกดิ...!!!!")
+    //bot.channels.get(channelID).send("แตะอีกดิ...!!!!")
 
 }
 
